@@ -1,1 +1,3 @@
-Begin UProject
+UProject (as we like to call it) is a global mission to make high quality education accesible for everyone, which will help a lot of people from different backgrounds to connect with like-minded people all over the world to discuss upon novel research ideas, learn from the best professors in the world.
+
+On a technical standpoint, UProject is now a Desktop application in Java integrated with backend from Spring Boot and MySQL as it's database. 
