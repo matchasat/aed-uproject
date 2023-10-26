@@ -4,17 +4,39 @@
  */
 package studentUI;
 
+import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import ui.MainJFrame;
+
 /**
  *
  * @author asus
  */
-public class stdPageJPanel extends javax.swing.JPanel {
+public class StudentDashboardPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form stdPageJPanel
      */
-    public stdPageJPanel() {
+    JPanel userProcessContainer;
+    MainJFrame mainFrame;
+    public StudentDashboardPanel(MainJFrame mainFrame,JPanel userProcessContainer) {
         initComponents();
+        // Add a ListSelectionListener to the table
+        courseTbl.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent event) {
+                if (!event.getValueIsAdjusting()) {
+                    int selectedRow = courseTbl.getSelectedRow();
+                    if (selectedRow >= 0) {
+                        // Call your method here with the selected row index
+                        System.out.println(selectedRow);
+                    }
+                }
+            }
+        });
+        this.mainFrame=mainFrame;
+        this.userProcessContainer = userProcessContainer;
+
     }
 
     /**
@@ -30,12 +52,10 @@ public class stdPageJPanel extends javax.swing.JPanel {
         Coursesbtn = new javax.swing.JButton();
         Profilebtn = new javax.swing.JButton();
         Graduationbtn = new javax.swing.JButton();
-        BackStdPagebtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        txtSearch = new javax.swing.JTextField();
+        searchBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        courseTbl = new javax.swing.JTable();
 
         Registrationbtn.setText("Registration");
 
@@ -60,93 +80,74 @@ public class stdPageJPanel extends javax.swing.JPanel {
             }
         });
 
-        BackStdPagebtn.setText("Back");
-        BackStdPagebtn.addActionListener(new java.awt.event.ActionListener() {
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackStdPagebtnActionPerformed(evt);
+                txtSearchActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("goes to the stdGraduation page ");
+        searchBtn.setText("Search");
 
-        jLabel2.setText("goes to the stdProfile page ");
-
-        jLabel3.setText("goes to the stdRegistration page ");
-
-        jLabel4.setText("goes to the stdCourses page ");
-
-        jLabel5.setText("returns to Login page ");
+        courseTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Course Name", "Code", "Instructor"
+            }
+        ));
+        jScrollPane1.setViewportView(courseTbl);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(Graduationbtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Profilebtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(79, Short.MAX_VALUE)
-                        .addComponent(Registrationbtn)
-                        .addGap(205, 205, 205)
-                        .addComponent(Coursesbtn)))
-                .addGap(146, 146, 146))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BackStdPagebtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4))
+                        .addGap(458, 458, 458)
+                        .addComponent(Coursesbtn)
+                        .addGap(25, 25, 25)
+                        .addComponent(Registrationbtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Profilebtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Graduationbtn)
+                        .addContainerGap(110, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+                            .addComponent(txtSearch, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)))
-                .addGap(85, 85, 85))
+                        .addComponent(searchBtn)
+                        .addGap(58, 58, 58))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Graduationbtn)
-                    .addComponent(Profilebtn))
-                .addGap(76, 76, 76)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Registrationbtn)
-                    .addComponent(Coursesbtn))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BackStdPagebtn)
-                    .addComponent(jLabel5))
-                .addGap(21, 21, 21))
+                    .addComponent(Coursesbtn)
+                    .addComponent(Profilebtn)
+                    .addComponent(Graduationbtn))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void CoursesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CoursesbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CoursesbtnActionPerformed
-
-    private void BackStdPagebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackStdPagebtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BackStdPagebtnActionPerformed
 
     private void ProfilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfilebtnActionPerformed
         // TODO add your handling code here:
@@ -156,17 +157,19 @@ public class stdPageJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_GraduationbtnActionPerformed
 
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackStdPagebtn;
     private javax.swing.JButton Coursesbtn;
     private javax.swing.JButton Graduationbtn;
     private javax.swing.JButton Profilebtn;
     private javax.swing.JButton Registrationbtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTable courseTbl;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

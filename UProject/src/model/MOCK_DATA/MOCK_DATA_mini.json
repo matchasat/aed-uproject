@@ -1,0 +1,62 @@
+[
+  {
+    "userid": "swaleworke0",
+    "name": "Shirlene Waleworke",
+    "email": "swaleworke0@flavors.me",
+    "txtPassword": "vR7%W%?vL3m",
+    "hashPassword": "b49adbd14bb993732afe79c1377e462a7a9c8c1f2f44bbc1b224d34ef0f78cb5",
+    "dob": "5/13/2023",
+    "prevPassword": [
+      "b49adbd14bb993732afe79c1377e462a7a9c8c1f2f44bbc1b224d34ef0f78cb5"
+    ],
+    "enabled": true
+  },
+  {
+    "userid": "tdunning1",
+    "name": "Terry Dunning",
+    "email": "tdunning1@salon.com",
+    "txtPassword": "hU7+0pPC*",
+    "hashPassword": "2cc26ab8bee1f301360f5900a1a9d5cdbaeab0813515f4eebcab966e4be720ef",
+    "dob": "2/24/2023",
+    "prevPassword": [
+      "2cc26ab8bee1f301360f5900a1a9d5cdbaeab0813515f4eebcab966e4be720ef"
+    ],
+    "enabled": true
+  },
+  {
+    "userid": "nwindram2",
+    "name": "Neall Windram",
+    "email": "nwindram2@geocities.jp",
+    "txtPassword": "zM0#tJ*@.sGe}Z",
+    "hashPassword": "3dccd28549919e4dae1aba56352803b46b53eb776c77f016812633b5f368697f",
+    "dob": "4/30/2023",
+    "prevPassword": [
+      "3dccd28549919e4dae1aba56352803b46b53eb776c77f016812633b5f368697f"
+    ],
+    "enabled": true
+  },
+  {
+    "userid": "zbertomier3",
+    "name": "Zebulen Bertomier",
+    "email": "zbertomier3@godaddy.com",
+    "txtPassword": "mV1>hC>3>yc3",
+    "hashPassword": "1d5c62d2256a251217479d0a513788f582d4e3570275f9ed854302c59045ca70",
+    "dob": "9/23/2023",
+    "prevPassword": [
+      "1d5c62d2256a251217479d0a513788f582d4e3570275f9ed854302c59045ca70"
+    ],
+    "enabled": true
+  },
+  {
+    "userid": "cbampford4",
+    "name": "Cass Bampford",
+    "email": "cbampford4@jalbum.net",
+    "txtPassword": "kI0\\ucyonQF?s((",
+    "hashPassword": "da6f20a281352eef45ccec92e62e79933a197ef53cabea06d8742f772f966f0a",
+    "dob": "2/25/2023",
+    "prevPassword": [
+      "da6f20a281352eef45ccec92e62e79933a197ef53cabea06d8742f772f966f0a"
+    ],
+    "enabled": true
+  }
+]

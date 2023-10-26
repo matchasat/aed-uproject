@@ -4,8 +4,10 @@
  */
 package studentUI;
 
+import java.awt.CardLayout;
 import model.Hashing;
 import javax.swing.JPanel;
+import ui.MainJFrame;
 
 /**
  *
@@ -17,8 +19,10 @@ public class StudentLoginPanel extends javax.swing.JPanel {
      * Creates new form StudentLoginPanel
      */
     JPanel userProcessContainer;
-    public StudentLoginPanel(JPanel userProcessContainer) {
+    MainJFrame mainFrame;
+    public StudentLoginPanel(MainJFrame mainFrame,JPanel userProcessContainer) {
         initComponents();
+        this.mainFrame=mainFrame;
         this.userProcessContainer = userProcessContainer;
     }
 
@@ -39,6 +43,7 @@ public class StudentLoginPanel extends javax.swing.JPanel {
         loginBtn = new javax.swing.JButton();
 
         lblStudentLogin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblStudentLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblStudentLogin.setText("Student Login");
 
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -69,27 +74,20 @@ public class StudentLoginPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(351, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblStudentLogin)
-                            .addGap(415, 415, 415))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(328, 328, 328)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblPassword)
-                            .addComponent(lblUsername)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-                            .addComponent(loginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                .addContainerGap(339, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblPassword)
+                    .addComponent(lblUsername)
+                    .addComponent(txtPassword)
+                    .addComponent(loginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblStudentLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addContainerGap(92, Short.MAX_VALUE)
                 .addComponent(lblStudentLogin)
                 .addGap(30, 30, 30)
                 .addComponent(lblUsername)
@@ -101,7 +99,7 @@ public class StudentLoginPanel extends javax.swing.JPanel {
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -115,8 +113,10 @@ public class StudentLoginPanel extends javax.swing.JPanel {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-    String hashedPswd = Hashing.hashPassword(new String(txtPassword.getPassword()));
-    
+    StudentDashboardPanel studentDashboard = new StudentDashboardPanel(this.mainFrame,this.userProcessContainer);
+    userProcessContainer.add("Student Dashboard Panel",studentDashboard);
+    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+    layout.next(userProcessContainer);
     }//GEN-LAST:event_loginBtnActionPerformed
 
 
