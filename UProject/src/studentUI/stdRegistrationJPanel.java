@@ -4,6 +4,9 @@
  */
 package studentUI;
 
+import javax.swing.JPanel;
+import ui.MainJFrame;
+
 /**
  *
  * @author asus
@@ -13,8 +16,9 @@ public class stdRegistrationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form stdRegistration
      */
-    public stdRegistrationJPanel() {
+    public stdRegistrationJPanel(MainJFrame mainFrame,JPanel userProcessContainer) {
         initComponents();
+        
     }
 
     /**
