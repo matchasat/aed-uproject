@@ -4,6 +4,9 @@
  */
 package professorUI;
 
+import javax.swing.JPanel;
+import ui.MainJFrame;
+
 /**
  *
  * @author asus
@@ -13,8 +16,13 @@ public class proStudentsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form proStudentsJPanel
      */
-    public proStudentsJPanel() {
-        initComponents();
+    JPanel userProcessContainer;
+    MainJFrame mainFrame;
+
+    proStudentsJPanel(MainJFrame mainFrame, JPanel userProcessContainer) {
+       initComponents();
+        this.mainFrame=mainFrame;
+        this.userProcessContainer = userProcessContainer;
     }
 
     /**
