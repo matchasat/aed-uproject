@@ -47,7 +47,7 @@ public class proStudentsJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Student", "Professor", "Course", "Comments on the Student"
+                "Student", "Course", "Instructor", "Comments on the Student"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
