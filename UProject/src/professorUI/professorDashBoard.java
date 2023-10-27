@@ -6,6 +6,7 @@ package professorUI;
 
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import model.professor.Professor;
 import ui.MainJFrame;
 
 /**
@@ -19,6 +20,7 @@ public class professorDashBoard extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     MainJFrame mainFrame;
+    Professor p;
 
     professorDashBoard(MainJFrame mainFrame, JPanel userProcessContainer) {
         initComponents();

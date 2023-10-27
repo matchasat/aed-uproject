@@ -5,6 +5,7 @@
 package professorUI;
 
 import javax.swing.JPanel;
+import model.professor.Professor;
 import ui.MainJFrame;
 
 /**
@@ -18,11 +19,13 @@ public class proProfileJPanel extends javax.swing.JPanel {
      */
      JPanel userProcessContainer;
     MainJFrame mainFrame;
+    private Professor p;
 
     proProfileJPanel(MainJFrame mainFrame, JPanel userProcessContainer) {
         initComponents();
         this.mainFrame=mainFrame;
         this.userProcessContainer = userProcessContainer;
+        
     }
 
     /**
