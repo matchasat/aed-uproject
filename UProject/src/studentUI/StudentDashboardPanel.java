@@ -109,10 +109,18 @@ public class StudentDashboardPanel extends javax.swing.JPanel {
 
     private void ProfilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfilebtnActionPerformed
         // TODO add your handling code here:
+        stdProfileJPanel studentProfile = new stdProfileJPanel(this.mainFrame,this.userProcessContainer);
+        userProcessContainer.add("student profile",studentProfile);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_ProfilebtnActionPerformed
 
     private void GraduationbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraduationbtnActionPerformed
         // TODO add your handling code here:
+        stdGraduationJPanel studentGraduation = new stdGraduationJPanel(this.mainFrame,this.userProcessContainer);
+        userProcessContainer.add("student Graduation",studentGraduation);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_GraduationbtnActionPerformed
 
     private void RegistrationbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrationbtnActionPerformed

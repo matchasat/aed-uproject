@@ -4,6 +4,9 @@
  */
 package studentUI;
 
+import javax.swing.JPanel;
+import ui.MainJFrame;
+
 /**
  *
  * @author asus
@@ -13,7 +16,7 @@ public class stdGraduationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form stdGraduationJPanel
      */
-    public stdGraduationJPanel() {
+    public stdGraduationJPanel(MainJFrame mainFrame,JPanel userProcessContainer) {
         initComponents();
     }
 
@@ -26,19 +29,126 @@ public class stdGraduationJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tblCoursesListToDo = new javax.swing.JScrollPane();
+        tblCourseListToDo = new javax.swing.JTable();
+        tblCoursesCompleted = new javax.swing.JScrollPane();
+        tblCurrentCourse = new javax.swing.JTable();
+        lblCoursesList = new javax.swing.JLabel();
+        lblCourseCompleted = new javax.swing.JLabel();
+        lblCreditsNeedToComplete = new javax.swing.JLabel();
+        txtCreditsNeedToComplete = new javax.swing.JTextField();
+        btnDownload = new javax.swing.JButton();
+        lblGenerateCertificate = new javax.swing.JLabel();
+
+        tblCourseListToDo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Course Name", "Credits", "Porfessor"
+            }
+        ));
+        tblCoursesListToDo.setViewportView(tblCourseListToDo);
+
+        tblCurrentCourse.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Course Name", "Credits", "GPA"
+            }
+        ));
+        tblCoursesCompleted.setViewportView(tblCurrentCourse);
+
+        lblCoursesList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblCoursesList.setText("To Do Courses");
+
+        lblCourseCompleted.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblCourseCompleted.setText("Courses Completed");
+
+        lblCreditsNeedToComplete.setText("Number of credits need to complete :");
+
+        txtCreditsNeedToComplete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCreditsNeedToCompleteActionPerformed(evt);
+            }
+        });
+
+        btnDownload.setText("Download");
+
+        lblGenerateCertificate.setText("Generate certificate :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(tblCoursesListToDo)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCoursesList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCourseCompleted, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblCreditsNeedToComplete, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCreditsNeedToComplete, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
+                        .addComponent(lblGenerateCertificate)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDownload)
+                        .addGap(58, 58, 58)))
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(tblCoursesCompleted, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCourseCompleted)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addComponent(lblCoursesList)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tblCoursesListToDo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCreditsNeedToComplete)
+                    .addComponent(txtCreditsNeedToComplete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDownload)
+                    .addComponent(lblGenerateCertificate))
+                .addGap(49, 49, 49))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(29, 29, 29)
+                    .addComponent(tblCoursesCompleted, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(269, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtCreditsNeedToCompleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCreditsNeedToCompleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCreditsNeedToCompleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDownload;
+    private javax.swing.JLabel lblCourseCompleted;
+    private javax.swing.JLabel lblCoursesList;
+    private javax.swing.JLabel lblCreditsNeedToComplete;
+    private javax.swing.JLabel lblGenerateCertificate;
+    private javax.swing.JTable tblCourseListToDo;
+    private javax.swing.JScrollPane tblCoursesCompleted;
+    private javax.swing.JScrollPane tblCoursesListToDo;
+    private javax.swing.JTable tblCurrentCourse;
+    private javax.swing.JTextField txtCreditsNeedToComplete;
     // End of variables declaration//GEN-END:variables
 }
