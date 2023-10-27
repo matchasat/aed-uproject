@@ -4,6 +4,7 @@
  */
 package professorUI;
 
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 import ui.MainJFrame;
 
@@ -62,6 +63,11 @@ public class professorLoginPanel extends javax.swing.JPanel {
         lblUsername.setText("Username");
 
         loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -109,6 +115,14 @@ public class professorLoginPanel extends javax.swing.JPanel {
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+            professorDashBoard pd= new professorDashBoard(this.mainFrame,this.userProcessContainer);
+            userProcessContainer.add("professorDashBoard",pd);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+    }//GEN-LAST:event_loginBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

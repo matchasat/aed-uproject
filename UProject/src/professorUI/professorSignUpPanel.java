@@ -4,7 +4,9 @@
  */
 package professorUI;
 
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import studentUI.StudentLoginPanel;
 import ui.MainJFrame;
 
 /**
@@ -53,6 +55,11 @@ public class professorSignUpPanel extends javax.swing.JPanel {
         jLabel6.setText("Experience :");
 
         btnSignUp.setText("Sign Up");
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignUpActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Name :");
 
@@ -116,6 +123,14 @@ public class professorSignUpPanel extends javax.swing.JPanel {
                 .addContainerGap(46, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        // TODO add your handling code here:
+        professorLoginPanel proPanel = new professorLoginPanel(this.mainFrame,this.userProcessContainer);
+        userProcessContainer.add("professor Login Panel",proPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnSignUpActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
