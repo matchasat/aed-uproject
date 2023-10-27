@@ -19,6 +19,7 @@ public class stdRegistrationJPanel extends javax.swing.JPanel {
     public stdRegistrationJPanel(MainJFrame mainFrame,JPanel userProcessContainer) {
         initComponents();
         
+        
     }
 
     /**
@@ -30,20 +31,14 @@ public class stdRegistrationJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        stdRegtoStdPagebtn = new javax.swing.JButton();
         stdRegistrationsavebtn = new javax.swing.JButton();
+        tblCoursesSelectedReg = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        tblCourseslistReg = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-
-        jLabel1.setText("lsit of courses comes and should be able to select and save the data ");
-
-        stdRegtoStdPagebtn.setText("Back");
-        stdRegtoStdPagebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stdRegtoStdPagebtnActionPerformed(evt);
-            }
-        });
+        txtSearch = new javax.swing.JTextField();
+        searchbtn = new javax.swing.JButton();
 
         stdRegistrationsavebtn.setText("Save");
         stdRegistrationsavebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -52,9 +47,41 @@ public class stdRegistrationJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("back to std Page");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblCoursesSelectedReg.setViewportView(jTable1);
 
-        jLabel3.setText("Saves details ");
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblCourseslistReg.setViewportView(jTable2);
+
+        jLabel2.setText("list of courses ");
+
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchActionPerformed(evt);
+            }
+        });
+
+        searchbtn.setText("Search");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -63,53 +90,60 @@ public class stdRegistrationJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jLabel1))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tblCoursesSelectedReg)
+                            .addComponent(tblCourseslistReg)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(stdRegtoStdPagebtn))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jLabel2)))
-                        .addGap(174, 174, 174)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(stdRegistrationsavebtn))))
-                .addContainerGap(119, Short.MAX_VALUE))
+                        .addGap(474, 474, 474)
+                        .addComponent(stdRegistrationsavebtn)
+                        .addGap(0, 448, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtSearch)
+                        .addGap(18, 18, 18)
+                        .addComponent(searchbtn)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stdRegtoStdPagebtn)
-                    .addComponent(stdRegistrationsavebtn))
-                .addGap(21, 21, 21))
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchbtn))
+                .addGap(18, 18, 18)
+                .addComponent(tblCourseslistReg, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tblCoursesSelectedReg, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(stdRegistrationsavebtn)
+                .addGap(25, 25, 25))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void stdRegtoStdPagebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stdRegtoStdPagebtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stdRegtoStdPagebtnActionPerformed
 
     private void stdRegistrationsavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stdRegistrationsavebtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_stdRegistrationsavebtnActionPerformed
 
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JButton searchbtn;
     private javax.swing.JButton stdRegistrationsavebtn;
-    private javax.swing.JButton stdRegtoStdPagebtn;
+    private javax.swing.JScrollPane tblCoursesSelectedReg;
+    private javax.swing.JScrollPane tblCourseslistReg;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }
