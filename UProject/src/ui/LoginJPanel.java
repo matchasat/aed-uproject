@@ -6,6 +6,7 @@ package ui;
 
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import professorUI.professorLoginPanel;
 import studentUI.StudentLoginPanel;
 
 /**
@@ -96,6 +97,10 @@ public class LoginJPanel extends javax.swing.JPanel {
 
     private void ProbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProbtnActionPerformed
         // TODO add your handling code here:
+        professorLoginPanel proLogin= new professorLoginPanel(this.mainFrame,this.userProcessContainer);
+        userProcessContainer.add("professorLoginPanel",proLogin);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_ProbtnActionPerformed
 
 

@@ -4,6 +4,9 @@
  */
 package professorUI;
 
+import javax.swing.JPanel;
+import ui.MainJFrame;
+
 /**
  *
  * @author smatcha
@@ -13,8 +16,14 @@ public class professorLoginPanel extends javax.swing.JPanel {
     /**
      * Creates new form professorLoginPanel
      */
-    public professorLoginPanel() {
+    JPanel userProcessContainer;
+    MainJFrame mainFrame;
+
+    public professorLoginPanel(MainJFrame mainFrame, JPanel userProcessContainer) {
         initComponents();
+        this.mainFrame=mainFrame;
+        this.userProcessContainer = userProcessContainer;
+
     }
 
     /**
