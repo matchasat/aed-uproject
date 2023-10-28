@@ -17,7 +17,7 @@ public class proProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form proProfileJPanel
      */
-     JPanel userProcessContainer;
+    JPanel userProcessContainer;
     MainJFrame mainFrame;
     private Professor p;
 
@@ -25,6 +25,7 @@ public class proProfileJPanel extends javax.swing.JPanel {
         initComponents();
         this.mainFrame=mainFrame;
         this.userProcessContainer = userProcessContainer;
+        
         
     }
 
@@ -61,6 +62,14 @@ public class proProfileJPanel extends javax.swing.JPanel {
 
         jLabel6.setText("Course Thought :");
 
+        txtProfessorName.setEnabled(false);
+
+        txtProfessorExperience.setEnabled(false);
+
+        txtUniversity.setEnabled(false);
+
+        txtCourseThought.setEnabled(false);
+
         btnUpdate.setText("UPDATE");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +78,12 @@ public class proProfileJPanel extends javax.swing.JPanel {
         });
 
         btnSave.setText("SAVE");
+        btnSave.setEnabled(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -131,6 +146,10 @@ public class proProfileJPanel extends javax.swing.JPanel {
         txtUniversity.setEnabled(true);
         btnSave.setEnabled(true);
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
