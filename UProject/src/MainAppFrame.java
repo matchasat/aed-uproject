@@ -1,27 +1,33 @@
+package UserInterface.WorkAreas;
+
+
+import UserInterface.WorkAreas.Entry.LoginPanel;
+import UserInterface.WorkAreas.Entry.SignupPanel;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import UserInterface.HomePanel;
+import java.awt.Dimension;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ui;
-
-import java.awt.CardLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
  * @author smatcha
  */
-public class MainJFrame extends javax.swing.JFrame {
+public class MainAppFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainJFrame
+     * Creates new form MainAppFrame
      */
-    public MainJFrame() {
+    public MainAppFrame() {
         initComponents();
+        this.setMinimumSize(new Dimension(500, 500));
         backBtn.setVisible(false);
         HomePanel homePanel = new HomePanel();
         // Fix the divider position
@@ -42,10 +48,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
         mainSplitPane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        loginBtn = new javax.swing.JButton();
-        signUpBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
+        loginBtn = new javax.swing.JButton();
+        signUpBtn = new javax.swing.JButton();
         userProcessContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,20 +59,6 @@ public class MainJFrame extends javax.swing.JFrame {
         mainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
         controlPanel.setBackground(new java.awt.Color(153, 153, 153));
-
-        loginBtn.setText("Login");
-        loginBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginBtnActionPerformed(evt);
-            }
-        });
-
-        signUpBtn.setText("Sign up");
-        signUpBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signUpBtnActionPerformed(evt);
-            }
-        });
 
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +71,20 @@ public class MainJFrame extends javax.swing.JFrame {
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
+            }
+        });
+
+        loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
+
+        signUpBtn.setText("Sign up");
+        signUpBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUpBtnActionPerformed(evt);
             }
         });
 
@@ -114,44 +120,23 @@ public class MainJFrame extends javax.swing.JFrame {
         userProcessContainer.setLayout(new java.awt.CardLayout());
         mainSplitPane.setRightComponent(userProcessContainer);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainSplitPane)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-        );
+        getContentPane().add(mainSplitPane, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void signUpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpBtnActionPerformed
-        // TODO add your handling code here:
-        SignUpPanel signupPanel = new SignUpPanel(this,this.userProcessContainer);
-        userProcessContainer.add("SignUp Panel",signupPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_signUpBtnActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
         int choice = JOptionPane.showConfirmDialog(this,"Do you want to exit the application?","Confirm Exit",JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.YES_OPTION) {
-                    System.exit(0);
+            System.exit(0);
         }
     }//GEN-LAST:event_exitBtnActionPerformed
 
-    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        // TODO add your handling code here:
-        LoginJPanel loginPanel = new LoginJPanel(this,this.userProcessContainer);
-        userProcessContainer.add("Login Panel",loginPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_loginBtnActionPerformed
-        
+    public JButton getBackBtn() {
+        return backBtn;
+    }
+
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         int lastIndex = userProcessContainer.getComponentCount() - 1;
@@ -164,10 +149,22 @@ public class MainJFrame extends javax.swing.JFrame {
         layout.previous(userProcessContainer);
         System.out.println(layout);
     }//GEN-LAST:event_backBtnActionPerformed
-    
-    public JButton getBackBtn() {
-        return backBtn;
-    }
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+        LoginPanel loginPanel = new LoginPanel(this,this.userProcessContainer);
+        userProcessContainer.add("Login Panel",loginPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_loginBtnActionPerformed
+
+    private void signUpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpBtnActionPerformed
+        // TODO add your handling code here:
+        SignupPanel signupPanel = new SignupPanel(this,this.userProcessContainer);
+        userProcessContainer.add("SignUp Panel",signupPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_signUpBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,21 +183,21 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainAppFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainAppFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainAppFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainAppFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainJFrame().setVisible(true);
+                new MainAppFrame().setVisible(true);
+                
             }
         });
     }
