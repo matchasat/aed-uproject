@@ -4,17 +4,27 @@
  */
 package UserInterface.WorkAreas.FacultyRole;
 
+import UserInterface.WorkAreas.MainAppFrame;
+import javax.swing.JPanel;
+
 /**
  *
  * @author smatcha
  */
 public class RankingPanel extends javax.swing.JPanel {
-
+JPanel userProcessContainer;
+    MainAppFrame mainFrame;
     /**
      * Creates new form RankingPanel
      */
     public RankingPanel() {
         initComponents();
+    }
+
+    RankingPanel(MainAppFrame mainFrame, JPanel userProcessContainer) {
+                  initComponents();
+        this.mainFrame = mainFrame;
+        this.userProcessContainer = userProcessContainer;
     }
 
     /**

@@ -4,17 +4,28 @@
  */
 package UserInterface.WorkAreas.FacultyRole;
 
+import UserInterface.WorkAreas.MainAppFrame;
+import javax.swing.JPanel;
+
 /**
  *
  * @author smatcha
  */
 public class TeachingHistoryPanel extends javax.swing.JPanel {
+    JPanel userProcessContainer;
+    MainAppFrame mainFrame;
 
     /**
      * Creates new form TeachingHistoryPanel
      */
     public TeachingHistoryPanel() {
         initComponents();
+    }
+
+    TeachingHistoryPanel(MainAppFrame mainFrame, JPanel userProcessContainer) {
+                  initComponents();
+        this.mainFrame = mainFrame;
+        this.userProcessContainer = userProcessContainer;
     }
 
     /**
