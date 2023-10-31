@@ -1,6 +1,5 @@
 package UserInterface.WorkAreas;
 
-
 import UserInterface.WorkAreas.Entry.LoginPanel;
 import UserInterface.WorkAreas.Entry.SignupPanel;
 import java.awt.CardLayout;
@@ -15,7 +14,6 @@ import java.awt.Dimension;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author smatcha
@@ -29,10 +27,14 @@ public class MainAppFrame extends javax.swing.JFrame {
         initComponents();
         this.setMinimumSize(new Dimension(500, 500));
         backBtn.setVisible(false);
+
+        btnProfile.setVisible(false);
+        btnSignOut.setVisible(false);
+
         HomePanel homePanel = new HomePanel();
         // Fix the divider position
         mainSplitPane.setEnabled(false);
-        userProcessContainer.add("Home Panel",homePanel);
+        userProcessContainer.add("Home Panel", homePanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }
@@ -52,6 +54,8 @@ public class MainAppFrame extends javax.swing.JFrame {
         backBtn = new javax.swing.JButton();
         loginBtn = new javax.swing.JButton();
         signUpBtn = new javax.swing.JButton();
+        btnSignOut = new javax.swing.JButton();
+        btnProfile = new javax.swing.JButton();
         userProcessContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,6 +92,20 @@ public class MainAppFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSignOut.setText("SignOut");
+        btnSignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignOutActionPerformed(evt);
+            }
+        });
+
+        btnProfile.setText("Profile");
+        btnProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProfileActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -97,7 +115,11 @@ public class MainAppFrame extends javax.swing.JFrame {
                 .addComponent(exitBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(backBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 655, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 481, Short.MAX_VALUE)
+                .addComponent(btnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSignOut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(signUpBtn)
@@ -111,7 +133,9 @@ public class MainAppFrame extends javax.swing.JFrame {
                     .addComponent(loginBtn)
                     .addComponent(signUpBtn)
                     .addComponent(exitBtn)
-                    .addComponent(backBtn))
+                    .addComponent(backBtn)
+                    .addComponent(btnSignOut)
+                    .addComponent(btnProfile))
                 .addGap(30, 30, 30))
         );
 
@@ -127,7 +151,7 @@ public class MainAppFrame extends javax.swing.JFrame {
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
-        int choice = JOptionPane.showConfirmDialog(this,"Do you want to exit the application?","Confirm Exit",JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(this, "Do you want to exit the application?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
@@ -136,6 +160,15 @@ public class MainAppFrame extends javax.swing.JFrame {
     public JButton getBackBtn() {
         return backBtn;
     }
+
+    public JButton getBtnProfile() {
+        return btnProfile;
+    }
+
+    public JButton getBtnSignOut() {
+        return btnSignOut;
+    }
+
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
@@ -147,24 +180,71 @@ public class MainAppFrame extends javax.swing.JFrame {
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-        System.out.println(layout);
+        int lastIndexNew = userProcessContainer.getComponentCount() - 1;
+        String currentName = userProcessContainer.getComponent(lastIndexNew).getName();
+        // Assuming you specifically want to get a JPanel
+        System.out.println(currentName); 
+       if("Home Panel".equals(currentName)){
+            backBtn.setVisible(false);
+            
+            btnProfile.setVisible(false);
+            btnSignOut.setVisible(false);
+            
+            loginBtn.setVisible(true);
+            signUpBtn.setVisible(true);
+        }
+        
+        
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-        LoginPanel loginPanel = new LoginPanel(this,this.userProcessContainer);
-        userProcessContainer.add("Login Panel",loginPanel);
+        LoginPanel loginPanel = new LoginPanel(this, this.userProcessContainer);
+        userProcessContainer.add("Login Panel", loginPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void signUpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpBtnActionPerformed
         // TODO add your handling code here:
-        SignupPanel signupPanel = new SignupPanel(this,this.userProcessContainer);
-        userProcessContainer.add("SignUp Panel",signupPanel);
+        SignupPanel signupPanel = new SignupPanel(this, this.userProcessContainer);
+        userProcessContainer.add("SignUp Panel", signupPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_signUpBtnActionPerformed
+
+    public JButton getLoginBtn() {
+        return loginBtn;
+    }
+
+    public JButton getSignUpBtn() {
+        return signUpBtn;
+    }
+
+    private void btnSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignOutActionPerformed
+        // TODO add your handling code here:
+        int choice = JOptionPane.showConfirmDialog(this, "Are you sure you want to sign out?", "Sign Out", JOptionPane.YES_NO_OPTION);
+        if (choice == JOptionPane.YES_OPTION) {
+            // Add your sign out logic here
+            JOptionPane.showMessageDialog(this, "You have been signed out.");
+            HomePanel homePanel = new HomePanel();
+            userProcessContainer.add("Home Panel", homePanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+            backBtn.setVisible(false);
+
+            btnProfile.setVisible(false);
+            btnSignOut.setVisible(false);
+            
+            loginBtn.setVisible(true);
+            signUpBtn.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_btnSignOutActionPerformed
+
+    private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,13 +277,15 @@ public class MainAppFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainAppFrame().setVisible(true);
-                
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton btnProfile;
+    private javax.swing.JButton btnSignOut;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JButton exitBtn;
     private javax.swing.JButton loginBtn;

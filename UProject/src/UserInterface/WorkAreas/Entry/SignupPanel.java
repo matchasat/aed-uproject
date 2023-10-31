@@ -5,6 +5,7 @@
 package UserInterface.WorkAreas.Entry;
 
 import UserInterface.WorkAreas.MainAppFrame;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -16,8 +17,13 @@ public class SignupPanel extends javax.swing.JPanel {
     /**
      * Creates new form SignupPanel
      */
+    MainAppFrame mainFrame;
+    JPanel userProcessContainer;
+
     public SignupPanel(MainAppFrame mainFrame, JPanel userProcessContainer) {
         initComponents();
+        this.mainFrame = mainFrame;
+        this.userProcessContainer = userProcessContainer;
     }
 
     /**
@@ -64,17 +70,16 @@ public class SignupPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(loginlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 956, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Stdbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(Probtn, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(employerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(loginlbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Stdbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(Probtn, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(employerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,15 +97,28 @@ public class SignupPanel extends javax.swing.JPanel {
 
     private void StdbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StdbtnActionPerformed
         // TODO add your handling code here:
-        
+        StudentSignupPanel stdsignupPanel = new StudentSignupPanel(this.mainFrame, this.userProcessContainer);
+        userProcessContainer.add("Student Signup Panel", stdsignupPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_StdbtnActionPerformed
 
     private void ProbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProbtnActionPerformed
         // TODO add your handling code here:
+        FacultySignupPanel facSignupPanel = new FacultySignupPanel(this.mainFrame, this.userProcessContainer);
+        userProcessContainer.add("Faculty Signup Panel", facSignupPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+
     }//GEN-LAST:event_ProbtnActionPerformed
 
     private void employerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employerBtnActionPerformed
         // TODO add your handling code here:
+        FacultySignupPanel facSignupPanel = new FacultySignupPanel(this.mainFrame, this.userProcessContainer);
+        userProcessContainer.add("Faculty Signup Panel", facSignupPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+
     }//GEN-LAST:event_employerBtnActionPerformed
 
 

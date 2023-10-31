@@ -55,7 +55,11 @@
                       <Component id="exitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="backBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="655" max="32767" attributes="0"/>
+                      <EmptySpace pref="481" max="32767" attributes="0"/>
+                      <Component id="btnProfile" min="-2" pref="74" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnSignOut" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="loginBtn" min="-2" pref="74" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="signUpBtn" min="-2" max="-2" attributes="0"/>
@@ -72,6 +76,8 @@
                           <Component id="signUpBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="exitBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="backBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSignOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnProfile" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
@@ -109,6 +115,22 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="signUpBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSignOut">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="SignOut"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignOutActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnProfile">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Profile"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProfileActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
