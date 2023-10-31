@@ -26,7 +26,7 @@ public class MainAppFrame extends javax.swing.JFrame {
     public MainAppFrame() {
         initComponents();
         this.setMinimumSize(new Dimension(500, 500));
-        backBtn.setVisible(false);
+        
 
         btnProfile.setVisible(false);
         btnSignOut.setVisible(false);
@@ -113,9 +113,9 @@ public class MainAppFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(exitBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(33, 33, 33)
                 .addComponent(backBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 481, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 466, Short.MAX_VALUE)
                 .addComponent(btnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSignOut)
