@@ -120,6 +120,7 @@ public class LoginPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
        
+layout.next(userProcessContainer);
     }//GEN-LAST:event_loginBtnActionPerformed
 
 

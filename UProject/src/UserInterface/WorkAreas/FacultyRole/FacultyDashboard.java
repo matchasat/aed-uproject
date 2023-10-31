@@ -5,6 +5,7 @@
 package UserInterface.WorkAreas.FacultyRole;
 
 import UserInterface.WorkAreas.MainAppFrame;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -121,6 +122,11 @@ public class FacultyDashboard extends javax.swing.JPanel {
 
     private void btnCurrentClassesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentClassesActionPerformed
         // TODO add your handling code here:
+        CurrentClassesPanel currentclassespanel= new CurrentClassesPanel(this.mainFrame,this.userProcessContainer);
+        userProcessContainer.add("CurrentClassesPanel",currentclassespanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_btnCurrentClassesActionPerformed
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
@@ -129,14 +135,26 @@ public class FacultyDashboard extends javax.swing.JPanel {
 
     private void btnCurrentClasses1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentClasses1ActionPerformed
         // TODO add your handling code here:
+        TeachingHistoryPanel panel= new TeachingHistoryPanel(this.mainFrame,this.userProcessContainer);
+        userProcessContainer.add("TeachingHistoryPanel",panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCurrentClasses1ActionPerformed
 
     private void btnCurrentClasses2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentClasses2ActionPerformed
         // TODO add your handling code here:
+        RankingPanel rankpanel= new RankingPanel(this.mainFrame,this.userProcessContainer);
+        userProcessContainer.add("RankingPanel",rankpanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCurrentClasses2ActionPerformed
 
     private void btnCurrentClasses3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentClasses3ActionPerformed
         // TODO add your handling code here:
+        StudentsDataPanel stdsignupPanel = new StudentsDataPanel(this.mainFrame, this.userProcessContainer);
+userProcessContainer.add("Student Signup Panel", stdsignupPanel);
+CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCurrentClasses3ActionPerformed
 
 
