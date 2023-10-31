@@ -50,7 +50,7 @@ JPanel userProcessContainer;
                 {null, null, null}
             },
             new String [] {
-                "Student", "Course", "Code"
+                "Student", "Course", "CourseCode"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

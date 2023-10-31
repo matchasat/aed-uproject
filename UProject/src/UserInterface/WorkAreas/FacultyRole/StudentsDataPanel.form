@@ -59,7 +59,7 @@
               <Table columnCount="3" rowCount="4">
                 <Column editable="true" title="Student" type="java.lang.Object"/>
                 <Column editable="true" title="Course" type="java.lang.Object"/>
-                <Column editable="true" title="Code" type="java.lang.Object"/>
+                <Column editable="true" title="CourseCode" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
