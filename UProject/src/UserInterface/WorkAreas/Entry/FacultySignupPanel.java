@@ -4,6 +4,7 @@
  */
 package UserInterface.WorkAreas.Entry;
 
+import UserInterface.WorkAreas.FacultyRole.FacultyLogin;
 import UserInterface.WorkAreas.MainAppFrame;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -150,8 +151,8 @@ public class FacultySignupPanel extends javax.swing.JPanel {
 
     private void signUpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpBtnActionPerformed
         // TODO add your handling code here:
-LoginPanel loginPanel = new LoginPanel(this.mainFrame, this.userProcessContainer);
-userProcessContainer.add("Login Panel", loginPanel);
+FacultyLogin login= new FacultyLogin(this.mainFrame,this.userProcessContainer);
+userProcessContainer.add("FacultyLogin", login);
 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 layout.next(userProcessContainer);
     }//GEN-LAST:event_signUpBtnActionPerformed
