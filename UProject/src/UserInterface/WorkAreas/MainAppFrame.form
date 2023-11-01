@@ -55,15 +55,17 @@
                       <Component id="exitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="backBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="466" max="32767" attributes="0"/>
+                      <EmptySpace pref="236" max="32767" attributes="0"/>
+                      <Component id="btnFacultyLogin" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnProfile" min="-2" pref="74" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnSignOut" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="loginBtn" min="-2" pref="112" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="loginBtn" min="-2" pref="74" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="signUpBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="signUpBtn" min="-2" pref="94" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -78,6 +80,7 @@
                           <Component id="backBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSignOut" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnProfile" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnFacultyLogin" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
@@ -103,7 +106,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="loginBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Login"/>
+                <Property name="text" type="java.lang.String" value="Student Login"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginBtnActionPerformed"/>
@@ -131,6 +134,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProfileActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnFacultyLogin">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Faculty Login"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFacultyLoginActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

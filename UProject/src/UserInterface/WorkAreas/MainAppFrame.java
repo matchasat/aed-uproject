@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import UserInterface.HomePanel;
+import UserInterface.WorkAreas.FacultyRole.FacultyLogin;
 import java.awt.Dimension;
 
 /*
@@ -56,6 +57,7 @@ public class MainAppFrame extends javax.swing.JFrame {
         signUpBtn = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
+        btnFacultyLogin = new javax.swing.JButton();
         userProcessContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,7 +80,7 @@ public class MainAppFrame extends javax.swing.JFrame {
             }
         });
 
-        loginBtn.setText("Login");
+        loginBtn.setText("Student Login");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBtnActionPerformed(evt);
@@ -106,6 +108,13 @@ public class MainAppFrame extends javax.swing.JFrame {
             }
         });
 
+        btnFacultyLogin.setText("Faculty Login");
+        btnFacultyLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyLoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -115,15 +124,17 @@ public class MainAppFrame extends javax.swing.JFrame {
                 .addComponent(exitBtn)
                 .addGap(33, 33, 33)
                 .addComponent(backBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 466, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
+                .addComponent(btnFacultyLogin)
+                .addGap(18, 18, 18)
                 .addComponent(btnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSignOut)
+                .addGap(18, 18, 18)
+                .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(signUpBtn)
-                .addGap(14, 14, 14))
+                .addComponent(signUpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +146,8 @@ public class MainAppFrame extends javax.swing.JFrame {
                     .addComponent(exitBtn)
                     .addComponent(backBtn)
                     .addComponent(btnSignOut)
-                    .addComponent(btnProfile))
+                    .addComponent(btnProfile)
+                    .addComponent(btnFacultyLogin))
                 .addGap(30, 30, 30))
         );
 
@@ -246,6 +258,14 @@ public class MainAppFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnProfileActionPerformed
 
+    private void btnFacultyLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyLoginActionPerformed
+        // TODO add your handling code here:
+        FacultyLogin faculty= new FacultyLogin(this,this.userProcessContainer);
+        userProcessContainer.add("Login Panel",faculty);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnFacultyLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -284,6 +304,7 @@ public class MainAppFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton btnFacultyLogin;
     private javax.swing.JButton btnProfile;
     private javax.swing.JButton btnSignOut;
     private javax.swing.JPanel controlPanel;
